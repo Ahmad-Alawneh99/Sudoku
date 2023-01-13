@@ -1,6 +1,6 @@
-const LocationPossibilities = require('./LocationPossibilities');
-const PuzzleState = require('./PuzzleState');
-const { getSquareBoundsOfLocation, isComplete, copyMatrix } = require('./utils');
+const LocationPossibilities = require('./utils/LocationPossibilities');
+const PuzzleState = require('./utils/PuzzleState');
+const { getSquareBoundsOfLocation, isComplete, copyMatrix } = require('./utils/utils');
 
 const findPossibleValuesOfLocation = (sudokuPuzzle, rowIndex, columnIndex) => {
 	let possibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9];

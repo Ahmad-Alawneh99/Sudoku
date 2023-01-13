@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npm run build:scss & nodemon src/server.js",
+    "build:scss": "sass src/assets/scss:public/scss"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@mjrdd/sudoku": "^2.0.1",
+    "express": "^4.18.2",
     "i": "^0.3.7",
-    "npm": "^9.2.0"
+    "npm": "^9.2.0",
+    "pug": "^3.0.2",
+    "sass": "^1.57.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
