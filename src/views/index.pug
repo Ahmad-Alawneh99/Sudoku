@@ -14,5 +14,8 @@ html
 								td.location(class=`column-${columnIndex} ${rowIndex}x${columnIndex}` tabindex=0)
 								- columnIndex++;
 						- rowIndex++;
-				button.start='Start'
+				.control-panel
+					.difficulty-selection-dropdown='Difficulty'
+					button.button.start-button='Start'
+					button.button.hints-button.disabled='Show Mistakes'
 		script(src='/js/bundle.js')

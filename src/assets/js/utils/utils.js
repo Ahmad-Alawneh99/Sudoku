@@ -18,11 +18,6 @@ export const getAxisStart = (currentIndex) => {
 	return axisStart;
 };
 
-export const getSquareBoundsOfLocation = (rowIndex, columnIndex) => ({
-	rowStart: getAxisStart(rowIndex),
-	columnStart: getAxisStart(columnIndex)
-});
-
 export const isComplete = (sudokuPuzzle) => {
 	let hasEmptyLocations = false;
 	sudokuPuzzle.forEach((row) => {

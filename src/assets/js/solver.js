@@ -1,6 +1,11 @@
-const LocationPossibilities = require('./utils/LocationPossibilities');
-const PuzzleState = require('./utils/PuzzleState');
-const { getSquareBoundsOfLocation, isComplete, copyMatrix } = require('./utils/utils');
+import LocationPossibilities from './utils/LocationPossibilities';
+import PuzzleState from'./utils/PuzzleState';
+import { isComplete, copyMatrix } from './utils/utils';
+
+const getSquareBoundsOfLocation = (rowIndex, columnIndex) => ({
+	rowStart: getAxisStart(rowIndex),
+	columnStart: getAxisStart(columnIndex)
+});
 
 const findPossibleValuesOfLocation = (sudokuPuzzle, rowIndex, columnIndex) => {
 	let possibleValues = [1, 2, 3, 4, 5, 6, 7, 8, 9];
