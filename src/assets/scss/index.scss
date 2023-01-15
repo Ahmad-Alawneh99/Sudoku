@@ -1,3 +1,55 @@
-p {
-    color: red;
+* {
+	font-family: sans-serif;
+}
+
+.main-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.board-container {
+	border-collapse: collapse;
+
+	& .board-row {
+		border-collapse: collapse;
+	}
+}
+
+.location {
+	align-items: center;
+	border: 1px solid black;
+	display: inline-flex;
+	height: 50px;
+	justify-content: center;
+	width: 50px;
+	font-size: 30px;
+
+	&:focus {
+		outline: 3px solid blue;
+		position: relative;
+		z-index: 10;
+	}
+}
+
+$firstAndThirdRows: 0, 1, 2, 6, 7, 8;
+
+@each $rowId in $firstAndThirdRows {
+	.row-#{$rowId} {
+		.location:not(.column-3):not(.column-4):not(.column-5) {
+			background: lightgray;
+		}
+	}
+}
+
+$middleRow: 3, 4, 5;
+
+@each $rowId in $middleRow {
+	.row-#{$rowId} {
+		.location.column-3,
+		.location.column-4,
+		.location.column-5 {
+			background: lightgray;
+		}
+	}
 }

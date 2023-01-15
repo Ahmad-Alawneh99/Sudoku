@@ -39,7 +39,7 @@ const getLocationWithLeastPossibilities = (sudokuPuzzle) => {
 	return possibilities[0];
 }
 
-const solveSudokuPuzzle = (sudokuPuzzle) => {
+export const solveSudokuPuzzle = (sudokuPuzzle) => {
 	const sudokuPuzzleCopy = copyMatrix(sudokuPuzzle);
 
 	const initialTargetLocation = getLocationWithLeastPossibilities(sudokuPuzzleCopy);
@@ -64,8 +64,4 @@ const solveSudokuPuzzle = (sudokuPuzzle) => {
 	}
 
 	return [];
-};
-
-module.exports = {
-    solveSudokuPuzzle,
 };

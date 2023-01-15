@@ -1,5 +1,18 @@
 html
-    head
-        link(rel='stylesheet', href='/scss/index.css', type='text/css')
-    body
-        p='data'
+	head
+		link(rel='stylesheet', href='/scss/index.css', type='text/css')
+	body
+		.main-container
+			.play-area-container
+				table.board-container
+					- var boardSize = 9;
+					- var rowIndex = 0;
+					while rowIndex < boardSize
+						tr.board-row(class=`row-${rowIndex}`)
+							- var columnIndex = 0;
+							while columnIndex < boardSize
+								td.location(class=`column-${columnIndex} ${rowIndex}x${columnIndex}` tabindex=0)
+								- columnIndex++;
+						- rowIndex++;
+				button.start='Start'
+		script(src='/js/bundle.js')

@@ -1,4 +1,4 @@
-const printPuzzle = (sudokuPuzzle) => {
+export const printPuzzle = (sudokuPuzzle) => {
 	sudokuPuzzle.forEach((row, index) => {
 		if ([3, 6].includes(index)) {
 			console.log('---------------------------');
@@ -7,7 +7,7 @@ const printPuzzle = (sudokuPuzzle) => {
 	});
 };
 
-const getAxisStart = (currentIndex) => {
+export const getAxisStart = (currentIndex) => {
 	let axisStart = 0;
 	if (currentIndex >= 3 && currentIndex <= 5) {
 		axisStart = 3;
@@ -18,12 +18,12 @@ const getAxisStart = (currentIndex) => {
 	return axisStart;
 };
 
-const getSquareBoundsOfLocation = (rowIndex, columnIndex) => ({
+export const getSquareBoundsOfLocation = (rowIndex, columnIndex) => ({
 	rowStart: getAxisStart(rowIndex),
 	columnStart: getAxisStart(columnIndex)
 });
 
-const isComplete = (sudokuPuzzle) => {
+export const isComplete = (sudokuPuzzle) => {
 	let hasEmptyLocations = false;
 	sudokuPuzzle.forEach((row) => {
 		if (hasEmptyLocations) {
@@ -36,7 +36,7 @@ const isComplete = (sudokuPuzzle) => {
 	return !hasEmptyLocations;
 };
 
-const copyMatrix = (matrix) => {
+export const copyMatrix = (matrix) => {
 	let newMatrix = [];
 	for (let i = 0; i < matrix.length; i++) {
 		newMatrix[i] = matrix[i].slice();
@@ -45,10 +45,16 @@ const copyMatrix = (matrix) => {
 	return newMatrix;
 };
 
-module.exports = {
-    printPuzzle,
-    getAxisStart,
-    getSquareBoundsOfLocation,
-    isComplete,
-    copyMatrix,
-};
+export const generatePuzzle = () => {
+	return [
+		3, 8, 5, 0, 0, 0, 0, 0, 0,
+		9, 2, 1, 0, 0, 0, 0, 0, 0,
+		6, 4, 7, 0, 0, 0, 0, 0, 0,
+		0, 0, 0, 1, 2, 3, 0, 0, 0,
+		0, 0, 0, 7, 8, 4, 0, 0, 0,
+		0, 0, 0, 6, 9, 5, 0, 0, 0,
+		0, 0, 0, 0, 0, 0, 8, 7, 3,
+		0, 0, 0, 0, 0, 0, 9, 6, 2,
+		0, 0, 0, 0, 0, 0, 1, 4, 5,
+	];
+}
